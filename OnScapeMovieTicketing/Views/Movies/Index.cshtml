@@ -1,0 +1,106 @@
+﻿@model IEnumerable<OnScapeMovieTicketing.Models.Movie>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div>
+    
+<h1 class="mt-5 pt-5 sub-heading">Create Movie</h1>
+        <div class="row-fluid d-flex align-items-end mb-4">
+          <div
+            class="left-line col-5 col-sm-4 col-md-3 col-lg-2 col-xl-2"
+          ></div>
+          <div class="right-line"></div>
+        </div>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Image)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ShowStartDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ShowEndDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Duration)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Synopsis)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Casts)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Director)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CreatedAt)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UpdatedAt)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Image)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ShowStartDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ShowEndDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Duration)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Synopsis)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Casts)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Director)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreatedAt)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UpdatedAt)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+
+    
+</div>
